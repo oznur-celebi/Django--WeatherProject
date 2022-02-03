@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
    <h1>Weather App</h1> 
+   {% for city  in city_data %}
+   {{city.city}}<br>
+   {{city.temp}}<br>  
+   {{city.desc}}<br>
+   <hr>
+   {% endfor %}
+   </div>   
 </body>
 </html>
