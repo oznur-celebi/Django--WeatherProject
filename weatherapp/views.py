@@ -14,6 +14,7 @@
 from django.shortcuts import render
 import requests
 from decouple import config
+from pprint import pprint
 
 
 def index(request):
@@ -21,6 +22,6 @@ def index(request):
     city = "Berlin"
     response = requests.get(url.format(city, config("API_KEY")))
     content = response.json()
-    print(content)
-    print(type(content))
+    pprint(content)
+    pprint(type(content))
     return render(request, "weatherapp/index.html")
